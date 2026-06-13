@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flourishing Grid Systems — Structured Data. Effortless Growth.</title>
+<meta name="description" content="Professional Excel & Google Sheets templates for entrepreneurs, freelancers, students and families. Instant download. Works worldwide.">
+<meta property="og:title" content="Flourishing Grid Systems">
+<meta property="og:description" content="Professional spreadsheet templates. Structured Data. Effortless Growth.">
+<meta property="og:image" content="https://flourishinggridsystems.github.io/preview.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   EDIT PRICES HERE — change numbers only
+   ═══════════════════════════════════════════ */
+/* Prices are set in the PRODUCTS array in the
+   <script> section at the bottom of this file.
+   Search for "EDIT PRICES" to find it quickly. */
+
+:root {
+  --hero:    #2D4F38;
+  --green:   #0B6623;
+  --teal:    #0E9E9E;
+  --charcoal:#2F3E46;
+  --mint:    #7DEBA0;
+  --cream:   #F9FAF7;
+  --white:   #FFFFFF;
+  --text:    #1A2E1A;
+  --gray:    #64748B;
+  --light:   #F0F9F4;
+  --border:  #E2E8F0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(28,43,34,0.97);
+  backdrop-filter:blur(12px);
+  padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+  border-bottom:1px solid rgba(125,235,160,0.15);
+}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-mark{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3px;padding:5px;
+  background:rgba(255,255,255,0.08);
+  border-radius:8px;width:36px;height:36px;
+}
+.logo-mark span{border-radius:2px;}
+.logo-mark span:nth-child(1){background:rgba(125,235,160,0.25);}
+.logo-mark span:nth-child(2){background:rgba(125,235,160,0.40);}
+.logo-mark span:nth-child(3){background:rgba(125,235,160,0.65);}
+.logo-mark span:nth-child(4){background:#7DEBA0;}
+.nav-brand{font-family:'Playfair Display',serif;color:white;font-size:0.95rem;font-weight:700;line-height:1.1;}
+.nav-brand span{display:block;font-size:0.58rem;font-family:'DM Sans',sans-serif;font-weight:300;color:var(--mint);letter-spacing:2px;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:1.5rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.875rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--mint);}
+.nav-cta{background:var(--mint)!important;color:#064E3B!important;padding:0.45rem 1.2rem!important;border-radius:100px;font-weight:700!important;}
+.nav-cta:hover{background:white!important;color:var(--green)!important;}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background:var(--hero);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:8rem 2rem 5rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(125,235,160,0.05) 0,rgba(125,235,160,0.05) 1px,transparent 1px,transparent 60px),
+    repeating-linear-gradient(90deg,rgba(125,235,160,0.05) 0,rgba(125,235,160,0.05) 1px,transparent 1px,transparent 60px);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(125,235,160,0.12);
+  border:1px solid rgba(125,235,160,0.25);
+  padding:0.4rem 1.1rem;border-radius:100px;
+  font-size:0.78rem;color:var(--mint);font-weight:500;
+  letter-spacing:1.2px;text-transform:uppercase;
+  margin-bottom:2rem;position:relative;
+  animation:fadeUp 0.8s ease both;
+}
+.hero-badge::before{content:'✦';font-size:0.65rem;}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.6rem,6.5vw,5rem);
+  font-weight:900;color:white;line-height:1.06;
+  max-width:780px;margin-bottom:1.5rem;
+  position:relative;
+  animation:fadeUp 0.8s 0.1s ease both;
+}
+.hero h1 em{color:var(--mint);font-style:normal;}
+.hero p{
+  font-size:1.1rem;color:rgba(255,255,255,0.68);
+  max-width:520px;line-height:1.75;margin-bottom:2.5rem;
+  position:relative;
+  animation:fadeUp 0.8s 0.2s ease both;
+}
+.hero-actions{
+  display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
+  position:relative;
+  animation:fadeUp 0.8s 0.3s ease both;
+}
+.btn-primary{
+  background:var(--mint);color:#064E3B;
+  padding:0.85rem 2rem;border-radius:100px;
+  font-weight:700;font-size:0.95rem;
+  text-decoration:none;transition:all 0.2s;
+  border:2px solid var(--mint);
+}
+.btn-primary:hover{background:white;border-color:white;transform:translateY(-2px);}
+.btn-outline{
+  background:transparent;color:white;
+  padding:0.85rem 2rem;border-radius:100px;
+  font-weight:500;font-size:0.95rem;
+  text-decoration:none;transition:all 0.2s;
+  border:2px solid rgba(255,255,255,0.3);
+}
+.btn-outline:hover{border-color:rgba(255,255,255,0.8);transform:translateY(-2px);}
+.hero-stats{
+  display:flex;gap:3rem;margin-top:4rem;
+  position:relative;
+  animation:fadeUp 0.8s 0.4s ease both;
+}
+.hero-stat{text-align:center;}
+.hero-stat strong{
+  display:block;font-family:'Playfair Display',serif;
+  font-size:2.2rem;color:var(--mint);font-weight:700;
+}
+.hero-stat span{font-size:0.75rem;color:rgba(255,255,255,0.5);letter-spacing:1.5px;text-transform:uppercase;}
+
+/* ── SECTIONS ── */
+.section{padding:5rem 2rem;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-header{text-align:center;margin-bottom:3.5rem;}
+.section-label{
+  display:inline-block;font-size:0.72rem;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--green);margin-bottom:0.75rem;
+}
+.section-header h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;
+  color:var(--charcoal);line-height:1.15;margin-bottom:1rem;
+}
+.section-header p{font-size:1rem;color:var(--gray);max-width:540px;margin:0 auto;line-height:1.75;}
+
+/* ── CATEGORIES ── */
+.categories{background:var(--white);}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;}
+.cat-card{
+  padding:1.5rem 1rem;border-radius:16px;
+  text-align:center;cursor:pointer;
+  transition:all 0.25s;text-decoration:none;
+  border:2px solid transparent;
+}
+.cat-card:hover{transform:translateY(-4px);border-color:currentColor;}
+.cat-icon{font-size:1.8rem;margin-bottom:0.75rem;display:block;}
+.cat-name{font-weight:600;font-size:0.85rem;display:block;margin-bottom:0.2rem;}
+.cat-count{font-size:0.75rem;opacity:0.65;}
+.cat-bt{background:#EFF6FF;color:#2563EB;}
+.cat-pf{background:#F0FDF4;color:#059669;}
+.cat-zw{background:#FFFBEB;color:#D97706;}
+.cat-re{background:#EFF6FF;color:#154360;}
+.cat-st{background:#EEF2FF;color:#4338CA;}
+.cat-hl{background:#FFF7ED;color:#C2410C;}
+.cat-fc{background:#FDF2F8;color:#BE185D;}
+
+/* ── FILTER BAR ── */
+.filter-bar{display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem;}
+.filter-btn{
+  padding:0.45rem 1.1rem;border-radius:100px;
+  border:1.5px solid var(--border);background:white;
+  font-size:0.82rem;font-weight:500;cursor:pointer;
+  transition:all 0.2s;color:var(--gray);font-family:'DM Sans',sans-serif;
+}
+.filter-btn:hover,.filter-btn.active{
+  border-color:var(--green);color:var(--green);background:#F0FDF4;
+}
+
+/* ── PRODUCTS GRID ── */
+.products{background:var(--cream);}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.5rem;}
+.product-card{
+  background:white;border-radius:20px;
+  overflow:hidden;transition:all 0.3s;
+  border:1px solid var(--border);
+  display:flex;flex-direction:column;
+}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(11,102,35,0.10);border-color:transparent;}
+.product-thumb{
+  height:140px;display:flex;align-items:center;
+  justify-content:center;position:relative;overflow:hidden;
+}
+.product-thumb-icon{font-size:2.8rem;opacity:0.35;}
+.product-cat-badge{
+  position:absolute;top:10px;left:10px;
+  padding:3px 9px;border-radius:100px;
+  font-size:0.68rem;font-weight:700;
+  letter-spacing:0.5px;text-transform:uppercase;color:white;
+}
+.product-price-tag{
+  position:absolute;top:10px;right:10px;
+  background:white;border-radius:100px;
+  padding:3px 11px;font-weight:700;
+  font-size:0.9rem;box-shadow:0 2px 8px rgba(0,0,0,0.10);
+}
+.product-body{padding:1.1rem 1.1rem 1.2rem;flex:1;display:flex;flex-direction:column;}
+.product-name{font-weight:700;font-size:0.95rem;color:var(--charcoal);margin-bottom:0.3rem;line-height:1.3;}
+.product-sub{font-size:0.8rem;color:var(--gray);margin-bottom:0.85rem;line-height:1.5;flex:1;}
+.product-feats{display:flex;flex-direction:column;gap:3px;margin-bottom:1rem;}
+.product-feat{font-size:0.76rem;color:var(--gray);display:flex;align-items:flex-start;gap:5px;line-height:1.4;}
+.product-feat::before{content:'✦';font-size:0.58rem;flex-shrink:0;margin-top:2px;}
+.product-actions{display:flex;gap:0.6rem;}
+.btn-buy{
+  flex:1;padding:0.58rem 0.75rem;
+  border-radius:100px;font-weight:700;
+  font-size:0.8rem;text-align:center;
+  text-decoration:none;transition:all 0.2s;display:block;
+}
+.btn-selar{color:white;flex:0.7;font-size:0.78rem;}
+.btn-selar:hover{filter:brightness(1.15);}
+.btn-kofi{
+  background:#FFF0EF;color:#FF5E5B;
+  border:1.5px solid #FF5E5B;flex:0 0 auto;
+  padding:0.58rem 0.9rem;
+}
+.btn-kofi:hover{background:#FF5E5B;color:white;}
+.btn-kofi-main{
+  background:#FF5E5B;color:white;
+  border:2px solid #FF5E5B;flex:1.4;
+  font-weight:700;font-size:0.82rem;
+}
+.btn-kofi-main:hover{background:#e54e4b;border-color:#e54e4b;transform:translateY(-1px);}
+
+/* ── WHY ── */
+.why{background:var(--white);}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;}
+.why-card{
+  padding:1.75rem;border-radius:20px;
+  background:var(--light);transition:transform 0.2s;
+}
+.why-card:hover{transform:translateY(-4px);}
+.why-icon{
+  width:48px;height:48px;border-radius:14px;
+  background:var(--hero);color:var(--mint);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin-bottom:1rem;
+}
+.why-card h3{font-weight:700;font-size:0.95rem;margin-bottom:0.4rem;color:var(--charcoal);}
+.why-card p{font-size:0.85rem;color:var(--gray);line-height:1.65;}
+
+/* ── SCRIPTURE ── */
+.scripture{
+  background:var(--hero);
+  padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;
+}
+.scripture::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(0deg,rgba(125,235,160,0.04) 0,rgba(125,235,160,0.04) 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,rgba(125,235,160,0.04) 0,rgba(125,235,160,0.04) 1px,transparent 1px,transparent 60px);
+  pointer-events:none;
+}
+.scripture blockquote{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.3rem,2.8vw,2rem);
+  color:white;font-weight:700;font-style:italic;
+  max-width:680px;margin:0 auto 1rem;
+  line-height:1.45;position:relative;
+}
+.scripture cite{font-size:0.85rem;color:var(--mint);font-style:normal;letter-spacing:2px;text-transform:uppercase;}
+
+/* ── PLATFORMS ── */
+.platforms{background:var(--cream);}
+.platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:680px;margin:0 auto;}
+.platform-card{
+  background:white;border-radius:20px;
+  padding:2rem;text-align:center;
+  border:1.5px solid var(--border);
+  transition:all 0.25s;
+}
+.platform-card:hover{border-color:var(--green);transform:translateY(-4px);}
+.platform-card h3{font-weight:700;margin-bottom:0.5rem;color:var(--charcoal);}
+.platform-card p{font-size:0.85rem;color:var(--gray);margin-bottom:1.25rem;line-height:1.6;}
+.platform-card a{
+  display:inline-block;padding:0.6rem 1.5rem;
+  border-radius:100px;font-weight:700;font-size:0.85rem;
+  text-decoration:none;transition:all 0.2s;
+}
+.btn-selar-platform{background:var(--green);color:white;}
+.btn-selar-platform:hover{background:#085c1d;}
+.btn-kofi-platform{background:#FF5E5B;color:white;}
+.btn-kofi-platform:hover{background:#e54e4b;}
+
+/* ── FOOTER ── */
+footer{background:var(--hero);color:white;padding:3.5rem 2rem 2rem;}
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;justify-content:space-between;
+  align-items:flex-start;flex-wrap:wrap;gap:2rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.footer-brand{max-width:260px;}
+.footer-brand h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.15rem;margin-bottom:0.5rem;color:var(--mint);
+}
+.footer-brand p{font-size:0.83rem;color:rgba(255,255,255,0.5);line-height:1.65;}
+.footer-col h4{
+  font-weight:600;margin-bottom:0.85rem;
+  color:rgba(255,255,255,0.7);font-size:0.78rem;
+  letter-spacing:1.5px;text-transform:uppercase;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.45rem;}
+.footer-col a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.83rem;transition:color 0.2s;}
+.footer-col a:hover{color:var(--mint);}
+.footer-bottom{
+  max-width:1200px;margin:1.5rem auto 0;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:0.78rem;color:rgba(255,255,255,0.3);flex-wrap:wrap;gap:0.5rem;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hero-stats{gap:1.5rem;}
+  .platform-grid{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;}
+  .hero h1{font-size:2.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="nav-brand">
+      Flourishing Grid Systems
+      <span>Structured Data. Effortless Growth.</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#products">Shop</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#platforms" class="nav-cta">Buy Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Professional Spreadsheet Templates</div>
+  <h1>Structured Data.<br><em>Effortless Growth.</em></h1>
+  <p>Ready-to-use Excel & Google Sheets templates for entrepreneurs, freelancers, students and families. Download instantly. Start immediately. Work smarter.</p>
+  <div class="hero-actions">
+    <a href="#products" class="btn-primary">Browse All Templates</a>
+    <a href="#categories" class="btn-outline">View Categories</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>57</strong><span>Templates</span></div>
+    <div class="hero-stat"><strong>7</strong><span>Categories</span></div>
+    <div class="hero-stat"><strong>$9</strong><span>From</span></div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section categories" id="categories">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Browse by category</span>
+      <h2>Find Your Perfect Template</h2>
+      <p>From personal budgeting to business finance, property investment to freelance billing — there is a template built exactly for your needs.</p>
+    </div>
+    <div class="cat-grid">
+      <a href="#products" class="cat-card cat-bt" onclick="filterProducts('Business Tools')">
+        <span class="cat-icon">📊</span>
+        <span class="cat-name">Business Tools</span>
+        <span class="cat-count">16 templates</span>
+      </a>
+      <a href="#products" class="cat-card cat-pf" onclick="filterProducts('Personal Finance')">
+        <span class="cat-icon">💰</span>
+        <span class="cat-name">Personal Finance</span>
+        <span class="cat-count">11 templates</span>
+      </a>
+      <a href="#products" class="cat-card cat-zw" onclick="filterProducts('Zimbabwe Special')">
+        <span class="cat-icon">🇿🇼</span>
+        <span class="cat-name">Zimbabwe Special</span>
+        <span class="cat-count">6 templates</span>
+      </a>
+      <a href="#products" class="cat-card cat-re" onclick="filterProducts('Real Estate')">
+        <span class="cat-icon">🏘️</span>
+        <span class="cat-name">Real Estate</span>
+        <span class="cat-count">5 templates</span>
+      </a>
+      <a href="#products" class="cat-card cat-st" onclick="filterProducts('Student Templates')">
+        <span class="cat-icon">🎓</span>
+        <span class="cat-name">Student Templates</span>
+        <span class="cat-count">4 templates</span>
+      </a>
+      <a href="#products" class="cat-card cat-hl" onclick="filterProducts('Home & Lifestyle')">
+        <span class="cat-icon">🏠</span>
+        <span class="cat-name">Home & Lifestyle</span>
+        <span class="cat-count">5 templates</span>
+      </a>
+      <a href="#products" class="cat-card cat-fc" onclick="filterProducts('Freelancers & Creators')">
+        <span class="cat-icon">🎨</span>
+        <span class="cat-name">Freelancers & Creators</span>
+        <span class="cat-count">6 templates</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products" id="products">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">All templates</span>
+      <h2>Ready-to-Use Spreadsheet Templates</h2>
+      <p>Every template is fully automated — enter your data and watch everything calculate instantly. One-time purchase, yours forever.</p>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterProducts('All')">All (58)</button>
+      <button class="filter-btn" onclick="filterProducts('Business Tools')">Business Tools</button>
+      <button class="filter-btn" onclick="filterProducts('Personal Finance')">Personal Finance</button>
+      <button class="filter-btn" onclick="filterProducts('Zimbabwe Special')">Zimbabwe Special</button>
+      <button class="filter-btn" onclick="filterProducts('Real Estate')">Real Estate</button>
+      <button class="filter-btn" onclick="filterProducts('Student Templates')">Students</button>
+      <button class="filter-btn" onclick="filterProducts('Home & Lifestyle')">Home & Lifestyle</button>
+      <button class="filter-btn" onclick="filterProducts('Freelancers & Creators')">Freelancers</button>
+      <button class="filter-btn" onclick="filterProducts('Premium')">⭐ Premium</button>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why" id="why">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Why choose us</span>
+      <h2>Templates That Actually Work</h2>
+      <p>Professionally designed, fully automated and built for real-world use — not just pretty layouts that leave you doing all the maths.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Instant Download</h3>
+        <p>Pay and download immediately. No waiting. Your template is ready to use in seconds.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔄</div>
+        <h3>Fully Automated</h3>
+        <p>Enter your numbers — every formula, chart and summary updates automatically. Zero manual calculation.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💻</div>
+        <h3>Excel & Google Sheets</h3>
+        <p>Works on both platforms. Microsoft Office or Google Workspace — your choice, your device.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌍</div>
+        <h3>Built for Everyone</h3>
+        <p>Practical templates designed for entrepreneurs, students, families and professionals worldwide.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔒</div>
+        <h3>Yours Forever</h3>
+        <p>One-time purchase. No subscriptions, no recurring fees. Download once, use for life.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📱</div>
+        <h3>Works Everywhere</h3>
+        <p>Desktop, laptop, tablet or phone. Excel and Google Sheets apps run on all your devices.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTURE -->
+<section class="scripture">
+  <blockquote>"But remember the LORD your God, for it is He who gives you the ability to produce wealth."</blockquote>
+  <cite>Deuteronomy 8:18</cite>
+</section>
+
+<!-- PLATFORMS -->
+<section class="section platforms" id="platforms">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Where to buy</span>
+      <h2>Shop on Your Preferred Platform</h2>
+      <p>Available on multiple platforms for easy payment worldwide — card, mobile money or PayPal.</p>
+    </div>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div style="font-size:2.2rem;margin-bottom:0.75rem;">🛒</div>
+        <h3>Selar</h3>
+        <p>Pay via bank card, mobile money or EcoCash. Instant delivery after payment.</p>
+        <a href="https://selar.com/m/kudakwashe-masarira1" target="_blank" class="btn-selar-platform">Shop on Selar →</a>
+      </div>
+      <div class="platform-card">
+        <div style="font-size:2.2rem;margin-bottom:0.75rem;">☕</div>
+        <h3>Ko-fi</h3>
+        <p>Pay via PayPal or card. Perfect for international customers worldwide.</p>
+        <a href="https://ko-fi.com/flourishgridsysgmailcom/shop#" target="_blank" class="btn-kofi-platform">Shop on Ko-fi →</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.88rem;color:var(--gray);">
+      📱 <strong>WhatsApp Orders:</strong> <a href="https://wa.me/263788916334" target="_blank" style="color:var(--green);font-weight:700;">+263 788 916 334</a> — Message us and we will guide you through the process.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Flourishing Grid Systems</h3>
+      <p>Professional spreadsheet templates for entrepreneurs, students, freelancers and families. Structured Data. Effortless Growth.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="#products" onclick="filterProducts('Business Tools')">Business Tools</a></li>
+        <li><a href="#products" onclick="filterProducts('Personal Finance')">Personal Finance</a></li>
+        <li><a href="#products" onclick="filterProducts('Zimbabwe Special')">Zimbabwe Special</a></li>
+        <li><a href="#products" onclick="filterProducts('Real Estate')">Real Estate</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <ul>
+        <li><a href="#products" onclick="filterProducts('Student Templates')">Student Templates</a></li>
+        <li><a href="#products" onclick="filterProducts('Home & Lifestyle')">Home & Lifestyle</a></li>
+        <li><a href="#products" onclick="filterProducts('Freelancers & Creators')">Freelancers & Creators</a></li>
+        <li><a href="#platforms">Buy Now</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://selar.com/m/kudakwashe-masarira1" target="_blank">Selar Store</a></li>
+        <li><a href="https://ko-fi.com/flourishgridsysgmailcom/shop#" target="_blank">Ko-fi Store</a></li>
+        <li><a href="https://wa.me/263788916334" target="_blank">WhatsApp Orders</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Flourishing Grid Systems. All rights reserved.</span>
+    <span>Structured Data. Effortless Growth. 🌿</span>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   EDIT PRICES HERE — change the price value for any product
+   ═══════════════════════════════════════════════════════════ */
+const PRODUCTS = [
+  // ── BUSINESS TOOLS ──────────────────────────────────────
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'📊',name:'The Blueprint Ledger',sub:'12-month bookkeeping tracker',f1:'Auto income & expense tracking',f2:'12 monthly sheets + dashboard',f3:'Excel & Google Sheets ready',price:'$16'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'📈',name:'The Pipeline Tracker',sub:'CRM & sales lead tracker',f1:'Client leads & deal stages tracked',f2:'Follow-up schedule auto-updates',f3:'Revenue dashboard included',price:'$13'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'📦',name:'The Stock Matrix',sub:'Inventory management system',f1:'Auto low-stock reorder alerts',f2:'Asset value auto-calculated',f3:'Supplier & reorder tracker',price:'$17'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'🧾',name:'The Invoice Engine',sub:'Client billing & payment tracker',f1:'Generate professional invoices',f2:'Outstanding payments flagged',f3:'Full payment history log',price:'$12'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'💹',name:'The Profit & Loss Pro',sub:'Investor-grade P&L statement',f1:'12 months + 4 quarterly roll-ups',f2:'3 live charts auto-updated',f3:'Gross & net margin calculated',price:'$23'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'💸',name:'The Cash Flow Command',sub:'Full cash flow management system',f1:'Operating, investing & financing',f2:'4 auto-updating charts included',f3:'Weekly & monthly views',price:'$19'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'🗂️',name:'The Project Command Centre',sub:'Complete project management tracker',f1:'50 tasks with deadline alerts',f2:'Budget tracking per task',f3:'Milestone & status dashboard',price:'$15'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'🏗️',name:'The Business Blueprint',sub:'3-year financial projections model',f1:'Revenue, costs & P&L auto-calc',f2:'Monthly cash flow for Year 1',f3:'Investor-ready layout',price:'$25'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'👥',name:'The HR Command Centre',sub:'Leave & attendance management',f1:'Leave balance auto-calculated',f2:'Monthly attendance register',f3:'All leave types supported',price:'$15'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'🤝',name:'The Deal Desk',sub:'Proposal & contract tracker',f1:'Win rate auto-calculated',f2:'Contract renewal alerts',f3:'Pipeline value dashboard',price:'$13'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'📱',name:'The Content Command',sub:'Social media content calendar',f1:'Content ideas bank included',f2:'Monthly analytics tracker',f3:'All platforms covered',price:'$11'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'📣',name:'The Marketing Ledger',sub:'Marketing budget & ROI tracker',f1:'Campaign spend vs budget tracked',f2:'ROI per channel calculated',f3:'Monthly utilisation summary',price:'$11'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'🎪',name:'The Event Master',sub:'Complete event planning system',f1:'Budget breakdown by category',f2:'Event checklist 8 weeks out',f3:'Vendor log & income tracker',price:'$13'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'🚀',name:'The Launch Pad',sub:'Business startup cost calculator',f1:'One-time & recurring costs',f2:'3 / 6 / 12-month projections',f3:'Investor presentation ready',price:'$15'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'💼',name:'The Payroll Pro',sub:'Employee payroll calculator',f1:'Tax, pension & medical auto-calc',f2:'Up to 35 employees supported',f3:'Payroll dashboard included',price:'$19'},
+  {cat:'Business Tools',bg:'#EFF6FF',badge:'#2563EB',icon:'⭐',name:'The Startup Launch Model',sub:'Investor-ready startup financial model',f1:'Cap table & dilution tracker',f2:'Bear / base / bull 3 scenarios',f3:'LTV:CAC & runway auto-calc',price:'$35'},
+  // ── PERSONAL FINANCE ────────────────────────────────────
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'💰',name:'The Flourish Wealth Hub',sub:'Zero-based monthly budget',f1:'Every dollar assigned a purpose',f2:'Savings rate auto-calculated',f3:'12-month spending tracker',price:'$11'},
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'🧭',name:'The Expense Compass',sub:'500-row expense log system',f1:'12 monthly summaries auto-calc',f2:'Category dropdowns included',f3:'4 auto-updating charts',price:'$9'},
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'⚖️',name:'The 50/30/20 Wealth Planner',sub:'Smart 50/30/20 rule budget',f1:'Colour-coded overspend alerts',f2:'Annual dashboard with charts',f3:'All income types supported',price:'$11'},
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'⛓️',name:'The Debt Freedom Planner',sub:'Snowball & avalanche method',f1:'Months to payoff auto-calculated',f2:'Total interest saved shown',f3:'Debt-free date projected',price:'$13'},
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'📸',name:'The Wealth Snapshot',sub:'Net worth tracker & monitor',f1:'Assets & liabilities register',f2:'Quarterly growth history',f3:'Debt-to-asset ratio shown',price:'$11'},
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'🎯',name:'The Goal Getter',sub:'Savings goal tracker & planner',f1:'Up to 20 goals tracked',f2:'Progress % auto-calculated',f3:'Monthly contributions log',price:'$9'},
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'📉',name:'The Portfolio Pro',sub:'Investment portfolio tracker',f1:'Gain/loss auto-calculated',f2:'Asset allocation breakdown',f3:'Overall return % shown',price:'$15'},
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'🐷',name:'The Piggy Bank Pro',sub:'Kids pocket money tracker',f1:'Chores & rewards system',f2:'Savings journal per child',f3:'Up to 6 children supported',price:'$9'},
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'🗺️',name:'The Retirement Roadmap',sub:'Retirement planning calculator',f1:'FV formula for accuracy',f2:'3 scenario comparison',f3:'Year-by-year milestones',price:'$17'},
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'🛡️',name:'The Safety Net Planner',sub:'Emergency fund calculator',f1:'3/6/9/12-month targets shown',f2:'Monthly progress tracker',f3:'Months to target auto-calc',price:'$9'},
+  {cat:'Personal Finance',bg:'#F0FDF4',badge:'#059669',icon:'📋',name:'The Bill Boss',sub:'Monthly bill payment tracker',f1:'Auto-pay status flagged',f2:'Annual overview 12 months',f3:'Total monthly bills auto-calc',price:'$9'},
+  // ── ZIMBABWE SPECIAL ────────────────────────────────────
+  {cat:'Zimbabwe Special',bg:'#FFFBEB',badge:'#D97706',icon:'🇿🇼',name:'Zimbabwe Tax Calculator',sub:'ZIMRA PAYE VAT & presumptive',f1:'2025 official tax tables built in',f2:'Medical aid credit applied',f3:'Net take-home auto-calc',price:'$11'},
+  {cat:'Zimbabwe Special',bg:'#FFFBEB',badge:'#D97706',icon:'💱',name:'Zimbabwe Budget Tracker',sub:'ZWG & USD dual currency budget',f1:'Exchange rate updates instantly',f2:'All ZWG amounts converted',f3:'Monthly surplus in USD',price:'$11'},
+  {cat:'Zimbabwe Special',bg:'#FFFBEB',badge:'#D97706',icon:'🤲',name:'The Mukando Tracker',sub:'Savings club rotating fund',f1:'Auto payout date calculated',f2:'Late payment fines tracker',f3:'Live group dashboard',price:'$11'},
+  {cat:'Zimbabwe Special',bg:'#FFFBEB',badge:'#D97706',icon:'🛍️',name:"The Trader's Ledger",sub:'Informal trader daily sales log',f1:'Profit per item auto-calc',f2:'Daily & monthly summary',f3:'Best seller auto-identified',price:'$9'},
+  {cat:'Zimbabwe Special',bg:'#FFFBEB',badge:'#D97706',icon:'🏪',name:'The Tuck Shop Manager',sub:'Tuck shop stock tracker',f1:'Auto reorder alerts fire',f2:'Daily revenue auto-calc',f3:'20 products pre-loaded',price:'$11'},
+  {cat:'Zimbabwe Special',bg:'#FFFBEB',badge:'#D97706',icon:'📚',name:'The School Fees Planner',sub:'School fees tracker',f1:'Term-by-term breakdown',f2:'Payment log with receipts',f3:'Balance due auto-calc',price:'$9'},
+  // ── REAL ESTATE ─────────────────────────────────────────
+  {cat:'Real Estate',bg:'#EFF6FF',badge:'#154360',icon:'🏘️',name:'The Property Analyser Pro',sub:'Real estate investment analysis',f1:'14 investment metrics auto-calc',f2:'Property comparison tool',f3:'10-year wealth projection',price:'$23'},
+  {cat:'Real Estate',bg:'#EFF6FF',badge:'#154360',icon:'🏡',name:'The Airbnb Manager',sub:'Short-term rental tracker',f1:'Booking log per guest',f2:'Occupancy rate auto-calc',f3:'Monthly income summary',price:'$15'},
+  {cat:'Real Estate',bg:'#EFF6FF',badge:'#154360',icon:'🔧',name:'The Property Shield',sub:'Property maintenance log',f1:'Overdue alerts auto-flag',f2:'Cost by property summary',f3:'Scheduled maintenance plan',price:'$13'},
+  {cat:'Real Estate',bg:'#EFF6FF',badge:'#154360',icon:'📝',name:"The Landlord's Ledger",sub:'Rental property income tracker',f1:'Monthly rent payment log',f2:'Maintenance cost tracker',f3:'Annual income summary',price:'$17'},
+  {cat:'Real Estate',bg:'#EFF6FF',badge:'#154360',icon:'🧮',name:'The Rental Property Calculator',sub:'Rental property investment calc',f1:'PMT mortgage formula built in',f2:'Net yield & cash-on-cash return',f3:'20-year wealth projection',price:'$19'},
+  // ── STUDENT TEMPLATES ───────────────────────────────────
+  {cat:'Student Templates',bg:'#EEF2FF',badge:'#4338CA',icon:'💳',name:'The Student Wallet',sub:'Student budget planner',f1:'15 expense categories',f2:'Monthly surplus auto-calc',f3:'12-month spending tracker',price:'$9'},
+  {cat:'Student Templates',bg:'#EEF2FF',badge:'#4338CA',icon:'📅',name:'The Student Planner Pro',sub:'Study schedule & assignments',f1:'30 assignments tracked',f2:'Weekly study schedule',f3:'Exam timetable included',price:'$11'},
+  {cat:'Student Templates',bg:'#EEF2FF',badge:'#4338CA',icon:'🎓',name:'The Loan Freedom Planner',sub:'Student loan calculator',f1:'PMT formula for accuracy',f2:'Extra payment savings shown',f3:'Full repayment schedule',price:'$11'},
+  {cat:'Student Templates',bg:'#EEF2FF',badge:'#4338CA',icon:'🏅',name:'The Academic Edge',sub:'Grade & GPA tracker',f1:'Auto grade classification',f2:'Subject performance summary',f3:'Semester progress tracker',price:'$9'},
+  // ── HOME & LIFESTYLE ────────────────────────────────────
+  {cat:'Home & Lifestyle',bg:'#FFF7ED',badge:'#C2410C',icon:'🏗️',name:'The Renovation Planner',sub:'Home renovation budget tracker',f1:'Room-by-room cost breakdown',f2:'Contractor log included',f3:'Over-budget alerts in red',price:'$15'},
+  {cat:'Home & Lifestyle',bg:'#FFF7ED',badge:'#C2410C',icon:'🏠',name:'The Home Manager',sub:'Household chores & maintenance',f1:'Weekly chores schedule',f2:'Next due date auto-calc',f3:'Appliance warranty tracker',price:'$9'},
+  {cat:'Home & Lifestyle',bg:'#FFF7ED',badge:'#C2410C',icon:'💒',name:'The Wedding Budget Planner',sub:'Plan your perfect day',f1:'20 expense categories',f2:'Guest list & RSVP tracker',f3:'Vendor contacts included',price:'$15'},
+  {cat:'Home & Lifestyle',bg:'#FFF7ED',badge:'#C2410C',icon:'👶',name:'The Baby Budget',sub:'New parent expense tracker',f1:'Pre-birth shopping list',f2:'Monthly expenses by category',f3:'Total spending auto-sum',price:'$11'},
+  {cat:'Home & Lifestyle',bg:'#FFF7ED',badge:'#C2410C',icon:'📦',name:'The Moving Master',sub:'Moving house checklist & budget',f1:'8-week planning checklist',f2:'15 cost categories tracked',f3:'Task assignment included',price:'$11'},
+  // ── FREELANCERS & CREATORS ──────────────────────────────
+  {cat:'Freelancers & Creators',bg:'#FDF2F8',badge:'#BE185D',icon:'🎬',name:"The Creator's Ledger",sub:'Content creator income tracker',f1:'6 income streams tracked',f2:'Sponsorship deal tracker',f3:'Business expenses log',price:'$13'},
+  {cat:'Freelancers & Creators',bg:'#FDF2F8',badge:'#BE185D',icon:'📊',name:'The Growth Tracker',sub:'YouTube & TikTok analytics',f1:'100 videos performance log',f2:'Monthly channel growth',f3:'Engagement rate auto-calc',price:'$11'},
+  {cat:'Freelancers & Creators',bg:'#FDF2F8',badge:'#BE185D',icon:'💡',name:"The Consultant's Command Centre",sub:'Consulting hours & billing',f1:'Hourly billing log included',f2:'Invoice tracker included',f3:'Outstanding balance shown',price:'$17'},
+  {cat:'Freelancers & Creators',bg:'#FDF2F8',badge:'#BE185D',icon:'⚙️',name:'The Freelance Command Centre',sub:'Freelance project tracker',f1:'Overdue deadline alerts',f2:'Client pipeline tracker',f3:'Payment status per project',price:'$13'},
+  {cat:'Freelancers & Creators',bg:'#FDF2F8',badge:'#BE185D',icon:'📒',name:'The Small Business Budget Tracker',sub:'12-month budget vs actuals',f1:'Budget & actual side by side',f2:'Variance auto-highlighted',f3:'Annual KPI dashboard',price:'$19'},
+  {cat:'Freelancers & Creators',bg:'#FDF2F8',badge:'#BE185D',icon:'🧾',name:'The Freelancer Invoice Tracker',sub:'Invoice & income tracker',f1:'16-sheet complete system',f2:'Invoice status colour-coded',f3:'Annual tax-ready dashboard',price:'$15'},
+  // ── PREMIUM ─────────────────────────────────────────────
+  {cat:'Premium',bg:'#FFFBEB',badge:'#B45309',icon:'⭐',name:'The Startup Launch Model',sub:'Investor-ready startup financial model',f1:'Cap table & dilution tracker',f2:'Bear / base / bull 3 scenarios',f3:'LTV:CAC & runway auto-calc',price:'$35'},
+];
+
+/* ── RENDER ─────────────────────────────────────────────── */
+function renderProducts(filter){
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = '';
+  const list = filter === 'All' ? PRODUCTS : PRODUCTS.filter(p => p.cat === filter);
+  list.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML = `
+      <div class="product-thumb" style="background:${p.bg}">
+        <div class="product-thumb-icon">${p.icon}</div>
+        <span class="product-cat-badge" style="background:${p.badge}">${p.cat}</span>
+        <span class="product-price-tag" style="color:${p.badge}">${p.price}</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">${p.name}</div>
+        <div class="product-sub">${p.sub}</div>
+        <div class="product-feats">
+          <div class="product-feat">${p.f1}</div>
+          <div class="product-feat">${p.f2}</div>
+          <div class="product-feat">${p.f3}</div>
+        </div>
+        <div class="product-actions">
+          <a href="https://ko-fi.com/flourishgridsysgmailcom/shop#" target="_blank"
+             class="btn-buy btn-kofi-main">☕ Buy on Ko-fi</a>
+          <a href="https://selar.com/m/kudakwashe-masarira1" target="_blank"
+             class="btn-buy btn-selar" style="background:${p.badge}">Selar</a>
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+/* ── FILTER ─────────────────────────────────────────────── */
+function filterProducts(cat){
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const label = btn.textContent.trim();
+    btn.classList.toggle('active',
+      cat === 'All' ? label.startsWith('All') : label === cat || label === cat.replace(' & Creators','s').replace('Home & ','').replace(' Templates',''));
+  });
+  renderProducts(cat);
+  setTimeout(() => document.getElementById('products').scrollIntoView({behavior:'smooth'}), 50);
+}
+
+/* ── SCROLL ANIMATIONS ──────────────────────────────────── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.08});
+
+document.querySelectorAll('.why-card,.cat-card,.platform-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(18px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  obs.observe(el);
+});
+
+/* ── INIT ───────────────────────────────────────────────── */
+renderProducts('All');
+</script>
+</body>
+</html>
